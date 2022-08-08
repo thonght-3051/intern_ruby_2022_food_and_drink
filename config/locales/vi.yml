@@ -1,0 +1,20 @@
+vi:
+  layouts:
+    application:
+      base_title: "InternRuby2022FoodAndDrink"
+  admin:
+    home:
+      index:
+        title: "Quản trị trang chủ"
+        home_page : "Trang chủ"
+  shared:
+    nav:
+      category: "Loại"
+      product: "Đồ uống và Đồ ăn"
+    header:
+      home: "Trang chủ"
+      contact: "Liên hệ"
+      call_me: "tất cả tôi bất cứ khi nào bạn có thể ..."
+      hour: "giờ"
+      msg: "tin nhắn"
+      min: "phút"
