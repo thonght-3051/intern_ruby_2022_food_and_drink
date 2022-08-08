@@ -67,7 +67,7 @@ Naming/AccessorMethodName:
 #################### Lint ################################
 ### Warnings
 Lint/AssignmentInCondition:
-  Description: "Don"t use assignment in conditions."
+  Description: "Don't use assignment in conditions."
   Enabled: false
 
 Rails/HelperInstanceVariable:
