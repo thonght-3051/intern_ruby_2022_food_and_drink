@@ -142,7 +142,7 @@ Layout/EmptyLineBetweenDefs:
   Enabled: true
 
 Layout/EmptyLines:
-  Description: "Don"t use several empty lines in a row."
+  Description: "Don't use several empty lines in a row."
   Enabled: true
 
 Layout/EmptyLinesAroundAccessModifier:
@@ -267,7 +267,7 @@ Style/MethodCallWithoutArgsParentheses:
 
 Style/MethodDefParentheses:
   Description: >-
-                 Checks if the method definitions have or don"t have
+                 Checks if the method definitions have or Don't have
                  parentheses.
   Enabled: true
 
@@ -341,7 +341,7 @@ Naming/BinaryOperatorParameterName:
 
 Style/ParenthesesAroundCondition:
   Description: >-
-                 Don"t use parentheses around the condition of an
+                 Don't use parentheses around the condition of an
                  if/unless/while.
   Enabled: true
 
@@ -366,7 +366,7 @@ Style/RaiseArgs:
   Enabled: true
 
 Style/RedundantBegin:
-  Description: "Don"t use begin blocks when they are not needed."
+  Description: "Don't use begin blocks when they are not needed."
   Enabled: true
 
 Style/RedundantException:
@@ -374,11 +374,11 @@ Style/RedundantException:
   Enabled: true
 
 Style/RedundantReturn:
-  Description: "Don"t use return where it"s not required."
+  Description: "Don't use return where it's not required."
   Enabled: true
 
 Style/RedundantSelf:
-  Description: "Don"t use self where it"s not needed."
+  Description: "Don't use self where it's not needed."
   Enabled: true
 
 Style/RegexpLiteral:
@@ -398,7 +398,7 @@ Style/SelfAssignment:
   Enabled: true
 
 Style/Semicolon:
-  Description: "Don"t use semicolons to terminate expressions."
+  Description: "Don't use semicolons to terminate expressions."
   Enabled: true
 
 Style/SignalException:
@@ -467,7 +467,7 @@ Layout/SpaceBeforeSemicolon:
 
 Layout/SpaceInsideBlockBraces:
   Description: >-
-                 Checks that block braces have or don"t have surrounding space.
+                 Checks that block braces have or Don't have surrounding space.
                  For blocks taking parameters, checks that the left brace has
                  or doesn"t have trailing space.
   Enabled: true
@@ -475,7 +475,7 @@ Layout/SpaceInsideBlockBraces:
 Layout/SpaceAroundEqualsInParameterDefault:
   Description: >-
                  Checks that the equals signs in parameter default assignments
-                 have or don"t have surrounding space depending on
+                 have or Don't have surrounding space depending on
                  configuration.
   Enabled: true
 
@@ -484,7 +484,7 @@ Layout/SpaceAroundOperators:
   Enabled: true
 
 Layout/SpaceInsideHashLiteralBraces:
-  Description: "Use spaces inside hash literal braces - or don"t."
+  Description: "Use spaces inside hash literal braces - or Don't."
   Enabled: true
 
 Layout/SpaceInsideParens:
@@ -545,7 +545,7 @@ Style/CommandLiteral:
 
 Style/VariableInterpolation:
   Description: >-
-                 Don"t interpolate global, instance and class variables
+                 Don't interpolate global, instance and class variables
                  directly in strings.
   Enabled: true
 
@@ -635,7 +635,7 @@ Security/Eval:
   Enabled: true
 
 Lint/SuppressedException:
-  Description: "Don"t suppress exception."
+  Description: "Don't suppress exception."
   Enabled: true
 
 Lint/LiteralInInterpolation:
