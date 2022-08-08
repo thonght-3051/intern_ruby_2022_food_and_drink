@@ -6,18 +6,56 @@ vi:
     home:
       index:
         title: "Quản trị trang chủ"
-        home_page : "Trang chủ"
+        home_page: "Trang chủ"
+    categories:
+      update:
+        alert_success_update: "Cập nhật thành công"
+        alert_err_update: "Cập nhật thất bại"
+      create:
+        alert_success_create: "Tạo thành công"
+        alert_err_create: "Tạo mới thất bại"
+      not_found: "Danh mục không được tìm thấy"
+      edit:
+        update_category: "Cập nhật"
+        title: "Cập nhật danh mục"
+      new:
+        new_category: "Tạo mới"
+        title: "Tạo danh mục mới"
+      index:
+        title: "Danh sách danh mục"
+        new_category: "Danh mục mới"
+        id: "Mã"
+        name: "Tên danh mục"
+        status: "Trạng thái"
+      destroy:
+        alert_success_delete: "Xóa thành công"
+        alert_err_delete: "Xóa danh mục không thành công"
+      form:
+        name: "Name"
+        status: "Trạng thái"
   shared:
     nav:
-      category: "Loại"
-      product: "Đồ uống và Đồ ăn"
+      category: "Danh mục"
+      add_category: "Thêm danh mục"
+      list_category: "Danh sách danh mục"
+      product: "Sản phẩm"
     header:
       home: "Trang chủ"
       contact: "Liên hệ"
-      call_me: "tất cả tôi bất cứ khi nào bạn có thể ..."
+      call_me: "Gọi cho tôi bất cứ khi nào bạn có thể ..."
       hour: "giờ"
-      msg: "tin nhắn"
+      msg: "tin nhắn"
       min: "phút"
+      en: "Tiếng Anh"
+      vi: "Tiếng Việt"
+  pagy:
+    nav:
+      next: "Tiếp theo"
+      prev: "Trước đó"
+  category:
+    status:
+      active: "Có hiệu lực"
+      inactive: "Không hoạt động"
   name: "Tên"
   email: "Địa chỉ email"
   phone: "số điện thoại"

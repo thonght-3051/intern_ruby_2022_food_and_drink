@@ -17,7 +17,7 @@
  *= require font-awesome
  *= require admin-lte
  */
- 
+
 @import "bootstrap";
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "./plugin/css/animate.css";
@@ -25,3 +25,4 @@
 @import "./plugin/css/bootstrap.min.css";
 @import "./plugin/css/font-awesome.min.css";
 @import "./plugin/css/style.css";
+@import "./auth.scss";

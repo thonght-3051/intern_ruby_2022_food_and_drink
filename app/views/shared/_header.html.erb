@@ -54,7 +54,6 @@
           <i class="fas fa-envelope mr-2"></i> 4 <%= t ".msg" %>
           <span class="float-right text-muted text-sm">3 <%= t ".min" %></span>
         </a>
-        
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item dropdown-footer"><%= t ".msg" %></a>
       </div>
@@ -66,12 +65,12 @@
     </li>
     <li class="nav-item">
       <%= link_to options = {locale: :en}, class:"dropdown-item" do %>
-        <i class="feather icon-lock"></i> <%= t "english" %>
+        <i class="feather icon-lock"></i> <%= t ".en" %>
       <% end %>
     </li>
     <li class="nav-item">
       <%= link_to options ={locale: :vi} , class:"dropdown-item" do %>
-        <i class="feather icon-lock"></i> <%= t "vietnamese" %>
+        <i class="feather icon-lock"></i> <%= t ".vi" %>
       <% end %>
     </li>
   </ul>
