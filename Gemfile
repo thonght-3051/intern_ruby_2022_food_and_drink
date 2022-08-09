@@ -11,7 +11,14 @@ gem "rails", "~> 6.1.6", ">= 6.1.6.1"
 gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
-
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'font-awesome-sass'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-angular'
+  gem 'rails-assets-leaflet'
+end
 group :development, :test do
   gem "pry-rails"
   gem "rspec-rails", "~> 4.0.1"

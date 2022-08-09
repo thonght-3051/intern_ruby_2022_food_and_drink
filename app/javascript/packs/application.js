@@ -7,6 +7,19 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import 'bootstrap';
+require('admin-lte');
+require("bootstrap");
+import "admin-lte/dist/css/AdminLTE.css";
+import "admin-lte/dist/css/skins/_all-skins.css";
+import "font-awesome/css/font-awesome.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme';
+import '../stylesheets/application';
+
+document.addEventListener("turbolinks:load", () => {
+  $('[data-toggle="tooltip"]').tooltip()
+});
 
 Rails.start()
 Turbolinks.start()
