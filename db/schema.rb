@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 2022_08_08_102634) do
     t.integer "phone"
     t.string "email"
     t.string "password_digest"
-    t.integer "role"
-    t.integer "status"
+    t.integer "role", default: 1, comment: "1: 'user', 2: 'admin'"
+    t.integer "status", default: 1, comment: "1: 'active', 2: 'block'"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

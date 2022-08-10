@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'auth/register'
+  get 'auth/login'
+  get 'auth/logout'
   namespace :admin do
     get 'home/index'
   end

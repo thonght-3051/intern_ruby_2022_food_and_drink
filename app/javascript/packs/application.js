@@ -16,6 +16,7 @@ import "font-awesome/css/font-awesome.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme';
 import '../stylesheets/application';
+require("./main")
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
