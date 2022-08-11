@@ -1,0 +1,19 @@
+const:
+  users:
+    name:
+      length:
+        min: 10
+        max: 50
+    email:
+      length:
+        min: 20
+        max: 255
+      regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    phone:
+      length: 11
+    password:
+      length:
+        min: 6
+    address:
+      type:
+        default: 1

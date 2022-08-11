@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     end
 
     get "dashboard", to: "dashboard#index"
+    # Auth
+    get "auth/register", to: "auth#new"
+    get "auth/login"
+    get "auth/logout"
+    post "auth/create"
+    post "auth/handle_login"
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
