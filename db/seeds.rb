@@ -71,8 +71,15 @@ Product.all.each { |pro| pro.product_images.create!(
 }
 
 Size.create!([
-  {:name => 'S'}, 
+  {:name => 'S'},
   {:name => 'M'},
   {:name => 'L'},
   {:name => 'Xl'},
 ])
+
+ProductAttribute.create!(
+  price: Faker::Commerce.price,
+  quantity: 10,
+  size_id: 3,
+  product_id: 1
+)

@@ -105,3 +105,8 @@ en:
       filter_range: "Filter by price"
     product:
       order_now: "Order now"
+    show:
+      order_now: "Order Now"
+      in_stock: "In stock"
+      quantity: "Quantity"
+      not_found: "Product not found"
