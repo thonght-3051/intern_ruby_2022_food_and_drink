@@ -33,12 +33,22 @@ en:
       form:
         name: "Name"
         status: "Status"
+    users:
+      index:
+        title: "List users"
+        id: "Id"
+        name: "Name"
+        phone: "Phone"
+        address: "Address"
+        status: "Status"
   shared:
     nav:
       category: "Category"
       add_category: "Add Category"
       list_category: "List Category"
       product: "Product"
+      user: "User"
+      list_user: "List user"
     header:
       home: "Home"
       contact: "Contact"
@@ -48,14 +58,6 @@ en:
       min: "min"
       en: "English"
       vi: "Vietnamese"
-  pagy:
-    nav:
-      next: "Next"
-      prev: "Prev"
-  category:
-    status:
-      active: "Active"
-      inactive: "Inactive"
   name: "Name"
   email: "Email address"
   phone: "Phone"
@@ -69,3 +71,15 @@ en:
   login_fail: "Incorrect email or password"
   text_register: "Don't have an account?"
   text_login: "Have an account?"
+  pagy:
+    nav:
+      next: "Next"
+      prev: "Prev"
+  category:
+    status:
+      active: "Active"
+      inactive: "Inactive"
+  user:
+    status:
+      block: "Default"
+      active: "Undefault"

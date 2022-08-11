@@ -16,3 +16,25 @@ User.create!(
     role: 2,
     status: 1
 )
+20.times do |n|
+  name = Faker::Name.name
+  email = "example-#{n+1}@railstutorial.org"
+  password = "password"
+  phone = Faker::Number.number(digits: 8)
+  User.create!(
+    name: name,
+    email: email,
+    phone: phone,
+    password: password,
+    password_confirmation: password,
+    role: 2,
+    status: 1
+  )
+end
+users = User.order(:created_at)
+address = Faker::Address.city
+users.each { |user| user.addresses.create!(
+  name: address,
+  types: rand(2) == 1 ? 0 : 1
+  )
+}

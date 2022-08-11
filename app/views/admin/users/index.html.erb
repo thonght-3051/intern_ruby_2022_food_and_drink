@@ -1,0 +1,38 @@
+<%= provide :title, t(".title") %>
+<div class="row mt-3">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-tools">
+        </div>
+      </div>
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+            <tr>
+              <th>
+                <%= t ".id" %>
+              </th>
+              <th>
+                <%= t ".name" %>
+              </th>
+              <th>
+                <%= t ".phone" %>
+              </th>
+              <th>
+                <%= t ".address" %>
+              </th>
+              <th>
+                <%= t ".status" %>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @users %>
+          </tbody>
+        </table>
+        <%== pagy_nav(@pagy) %>
+      </div>
+    </div>
+  </div>
+</div>
