@@ -267,7 +267,7 @@ Style/MethodCallWithoutArgsParentheses:
 
 Style/MethodDefParentheses:
   Description: >-
-                 Checks if the method definitions have or Don't have
+                 Checks if the method definitions have or don't have
                  parentheses.
   Enabled: true
 
