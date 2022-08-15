@@ -33,9 +33,11 @@
           <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
             <%= f.password_field :password_confirmation %>
           </div>
-          <%= f.submit "submit" %>
+          <%= f.submit t("btn_register") %>
         <% end %>
       </div>
     </div>
+    <%= t "text_login" %>
+    <%= link_to t("login"), auth_login_path %>
   </div>
 </div>

@@ -1,4 +1,5 @@
 class AuthController < ApplicationController
+  include AuthHelper
   layout "auth"
   def new
     @user = User.new
@@ -13,6 +14,23 @@ class AuthController < ApplicationController
       flash[:danger] = t "register_fail"
       render :new
     end
+  end
+
+  def login; end
+
+  def handle_login
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user&.authenticate(params[:session][:password])
+      decentralization_redirect_user user
+    else
+      flash.now[:danger] = t "login_fail"
+      render :login
+    end
+  end
+
+  def logout
+    log_out if logged_in?
+    redirect_to root_url
   end
 
   private

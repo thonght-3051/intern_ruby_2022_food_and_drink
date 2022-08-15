@@ -2,6 +2,10 @@ class User < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many :orders, dependent: :destroy
   accepts_nested_attributes_for :addresses, allow_destroy: true
+  enum role: {
+    user: Settings.const.users.role.user,
+    admin: Settings.const.users.role.admin
+  }
 
   before_save :email_downcase
 

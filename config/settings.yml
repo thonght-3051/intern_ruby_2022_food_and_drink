@@ -17,6 +17,9 @@ const:
     address:
       type:
         default: 1
+    role:
+      user: 1
+      admin: 2
 category:
   item_category: 5
 users:
