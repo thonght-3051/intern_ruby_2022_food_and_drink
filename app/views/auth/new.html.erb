@@ -1,0 +1,41 @@
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2><%= t "register_account" %></h2>
+    </div>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <div class="row clearfix">
+      <div class="">
+        <%= form_for @user, url: auth_create_path, html: { method: :post } do |f| %>
+          <div class="text-red">
+            <%= render "shared/error_messages", object: f.object %>
+          </div>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+            <%= f.text_field :name %>
+          </div>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <%= f.text_field :email %>
+          </div>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone"></i></span>
+            <%= f.text_field :phone %>
+          </div>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-address-card"></i></span>
+            <%= f.fields_for :addresses do |add| %>
+              <%= add.text_field :name %>
+              <%= add.hidden_field :types, :value => Settings.const.users.address.type.default %>
+            <% end %>
+          </div>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <%= f.password_field :password %>
+          </div>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <%= f.password_field :password_confirmation %>
+          </div>
+          <%= f.submit "submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
