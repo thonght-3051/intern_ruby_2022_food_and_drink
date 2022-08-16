@@ -43,6 +43,17 @@ vi:
         phone: "SDT"
         address: "Địa chỉ"
         status: "Trạng thái"
+    products:
+      index:
+        name: "Tên sản phẩm"
+        descriptions: "Mô tả"
+        size: "Kich cỡ"
+        price: "Giá"
+        quantity: "Số lượng"
+        category: "Danh mục"
+        new: "Thêm mới"
+      new:
+        create: "Tạo"
   shared:
     nav:
       category: "Danh mục"

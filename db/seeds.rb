@@ -39,11 +39,6 @@ users.each { |user| user.addresses.create!(
   )
 }
 
-Size.create!(name: "S")
-Size.create!(name: "M")
-Size.create!(name: "L")
-Size.create!(name: "XL")
-
 6.times do |n|
   name = Faker::Commerce.brand
   Category.create!(
@@ -74,3 +69,10 @@ Product.all.each { |pro| pro.product_images.create!(
   image: Faker::LoremFlickr.image
   )
 }
+
+Size.create!([
+  {:name => 'S'}, 
+  {:name => 'M'},
+  {:name => 'L'},
+  {:name => 'Xl'},
+])
