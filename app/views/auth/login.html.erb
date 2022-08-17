@@ -1,2 +1,25 @@
-<h1>Auth#login</h1>
-<p>Find me in app/views/auth/login.html.erb</p>
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2><%= t "login" %></h2>
+    </div>
+    <div class="title_container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="row clearfix">
+      <%= form_for :session, url: auth_handle_login_path do |f| %>
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+          <%= f.text_field :email, placeholder: t("email") %>
+        </div>
+        <div class="input_field"> <span ><i aria-hidden="true" class="fa fa-lock"></i></span>
+          <%= f.password_field :password, placeholder: t("password") %>
+        </div>
+        <%= f.submit t("login") %>
+      <% end %>
+    </div>
+    <%= t "text_register" %>
+    <%= link_to t("register"), auth_register_path %>
+  </div>
+</div>

@@ -65,3 +65,7 @@ vi:
   btn_register: "Đăng kí"
   register_account: "Đăng kí tài khoản"
   register_fail: "Đăng kí thất bại"
+  login: "Đăng nhập"
+  login_fail: "Tài khoản hoặc mật khẩu không chính xác"
+  text_register: "Chưa có tài khoản?"
+  text_login: "Đã có tài khoản?"

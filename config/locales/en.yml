@@ -65,3 +65,7 @@ en:
   btn_register: "Register"
   register_account: "Register account"
   register_fail: "Register failed!"
+  login: "Login"
+  login_fail: "Incorrect email or password"
+  text_register: "Don't have an account?"
+  text_login: "Have an account?"
