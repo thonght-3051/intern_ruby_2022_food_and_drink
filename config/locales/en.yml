@@ -7,10 +7,38 @@ en:
       index:
         title: "Home admin"
         home_page: "Home page"
+    categories:
+      update:
+        alert_success_update: "Update successfully"
+        alert_err_update: "Update fail"
+      create:
+        alert_success_create: "Create successfully"
+        alert_err_create: "Create fail"
+      not_found: "Category not found"
+      edit:
+        update_category: "Update"
+        title: "Update category"
+      new:
+        new_category: "Create"
+        title: "Create new category"
+      index:
+        title: "List category"
+        new_category: "New category"
+        id: "Id"
+        name: "Category Name"
+        status: "Status"
+      destroy:
+        alert_success_delete: "Delete successfully"
+        alert_err_delete: "Delete category fail"
+      form:
+        name: "Name"
+        status: "Status"
   shared:
     nav:
       category: "Category"
-      product: "Drink and Food"
+      add_category: "Add Category"
+      list_category: "List Category"
+      product: "Product"
     header:
       home: "Home"
       contact: "Contact"
@@ -18,6 +46,16 @@ en:
       hour: "hours"
       msg: "messages"
       min: "min"
+      en: "English"
+      vi: "Vietnamese"
+  pagy:
+    nav:
+      next: "Next"
+      prev: "Prev"
+  category:
+    status:
+      active: "Active"
+      inactive: "Inactive"
   name: "Name"
   email: "Email address"
   phone: "Phone"

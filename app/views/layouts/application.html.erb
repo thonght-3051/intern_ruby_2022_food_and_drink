@@ -4,30 +4,33 @@
     <title><%= full_title yield :title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
-      <div class="wrapper">
-        <%= render "shared/header" %>
-        <%= render "shared/nav" %>
-        <div class="content-wrapper">
-          <section class="content-header">
-            <h1>
-              <%= yield(:page_header) %>
-            </h1>
-            <ol class="breadcrumb">
-              <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-              <li class="active">Here</li>
-            </ol>
-          </section>
-
-          <section class="content container-fluid">
-            <%= yield %>
-          </section>
-        </div>
-        <%= render "shared/footer" %>
-      <div>
+    <div class="wrapper">
+      <%= render "shared/header" %>
+      <%= render "shared/nav" %>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <h1>
+            <%= yield(:title)%>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+          </ol>
+        </section>
+        <section class="content container-fluid">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %> alert_mess">
+              <%= message %>
+            </div>
+          <% end %>
+          <%= yield %>
+        </section>
+      </div>
+      <%= render "shared/footer" %>
+    <div>
   </body>
 </html>

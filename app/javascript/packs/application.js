@@ -2,6 +2,8 @@
 // present in this directory. You"re encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it"ll be compiled.
+//= require jquery
+//= require jquery_ujs
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -15,6 +17,7 @@ import "font-awesome/css/font-awesome.css";
 require('../stylesheets/application');
 import "@fortawesome/fontawesome-free/js/all";
 
+global.toastr = require("toastr")
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
 });
@@ -22,3 +25,4 @@ document.addEventListener("turbolinks:load", () => {
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+

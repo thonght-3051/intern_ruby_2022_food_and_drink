@@ -17,3 +17,7 @@ const:
     address:
       type:
         default: 1
+category:
+  item_category: 5
+users:
+  item_user: 8
