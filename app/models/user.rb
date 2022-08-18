@@ -7,6 +7,8 @@ class User < ApplicationRecord
     admin: Settings.const.users.role.admin
   }
 
+  enum status: {active: 1, block: 2}
+
   before_save :email_downcase
 
   validates :name, presence: true,
@@ -29,7 +31,21 @@ class User < ApplicationRecord
     length: {minimum: Settings.const.users.password.length.min},
     allow_nil: true
 
+  scope :latest_user, ->{order created_at: :desc}
+
   def email_downcase
     email.downcase!
+  end
+
+  class << self
+    def statuses_i18n
+      statuses.each_with_object({}) do |(k, _), obj|
+        obj[I18n.t("user.status.#{k}")] = k
+      end
+    end
+  end
+
+  def status_i18n
+    I18n.t("user.status.#{status}")
   end
 end

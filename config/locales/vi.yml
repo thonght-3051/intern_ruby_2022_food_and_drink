@@ -33,12 +33,22 @@ vi:
       form:
         name: "Name"
         status: "Trạng thái"
+    users:
+      index:
+        title: "Danh sách người dùng"
+        id: "Mã người dùng"
+        name: "Tên người dùng"
+        phone: "SDT"
+        address: "Địa chỉ"
+        status: "Trạng thái"
   shared:
     nav:
       category: "Danh mục"
       add_category: "Thêm danh mục"
       list_category: "Danh sách danh mục"
       product: "Sản phẩm"
+      user: "Người dùng"
+      list_user: "Danh sách người dùng"
     header:
       home: "Trang chủ"
       contact: "Liên hệ"
@@ -48,14 +58,6 @@ vi:
       min: "phút"
       en: "Tiếng Anh"
       vi: "Tiếng Việt"
-  pagy:
-    nav:
-      next: "Tiếp theo"
-      prev: "Trước đó"
-  category:
-    status:
-      active: "Có hiệu lực"
-      inactive: "Không hoạt động"
   name: "Tên"
   email: "Địa chỉ email"
   phone: "số điện thoại"
@@ -69,3 +71,15 @@ vi:
   login_fail: "Tài khoản hoặc mật khẩu không chính xác"
   text_register: "Chưa có tài khoản?"
   text_login: "Đã có tài khoản?"
+  pagy:
+    nav:
+      next: "Tiếp theo"
+      prev: "Trước đó"
+  category:
+    status:
+      active: "Có hiệu lực"
+      inactive: "Không hoạt động"
+  user:
+    status:
+      block: "Khóa"
+      active: "Hoạt động"
