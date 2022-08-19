@@ -21,6 +21,20 @@ const:
     role:
       user: 1
       admin: 2
+  products:
+    name:
+      length:
+        min: 5
+        max: 100
+    description:
+      length:
+        min: 30
+        max: 1000
+    image:
+      format_image: !ruby/regexp /\.gif|jpg|png/i
+    attribute:
+      max: 1000000000000
+      min: 0
 category:
   item_category: 5
 users:

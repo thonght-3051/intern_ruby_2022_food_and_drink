@@ -8,13 +8,13 @@
 
 # Make admin
 User.create!(
-    name: "admin",
-    phone: "0123456789",
-    email: "admin@gmail.com",
-    password: "123123",
-    password_confirmation: "123123",
-    role: 2,
-    status: 1
+  name: "admin",
+  phone: "0123456789",
+  email: "admin@gmail.com",
+  password: "123123",
+  password_confirmation: "123123",
+  role: 2,
+  status: 1
 )
 20.times do |n|
   name = Faker::Name.name

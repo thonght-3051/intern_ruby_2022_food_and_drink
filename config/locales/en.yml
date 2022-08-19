@@ -53,7 +53,13 @@ en:
         category: "Category"
         new: "New"
       new:
-        create: "Create" 
+        title: "Create new product"
+        create: "Create"
+        category_not_exists: "Category not exists"
+        validate_image: "Wrong image format"
+      create:
+        success: "Create successfully"
+        fail: "Create fail"
   shared:
     nav:
       category: "Category"
@@ -110,3 +116,5 @@ en:
       in_stock: "In stock"
       quantity: "Quantity"
       not_found: "Product not found"
+  submit: "Submit"
+  empty: "Empty!"

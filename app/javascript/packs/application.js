@@ -12,10 +12,13 @@ import "channels"
 import 'bootstrap';
 require('admin-lte');
 require("bootstrap");
+require("jquery");
+require("cocoon");
 import "admin-lte/dist/css/AdminLTE.css";
 import "font-awesome/css/font-awesome.css";
 require('../stylesheets/application');
 import "@fortawesome/fontawesome-free/js/all";
+require("./product")
 
 global.toastr = require("toastr")
 document.addEventListener("turbolinks:load", () => {

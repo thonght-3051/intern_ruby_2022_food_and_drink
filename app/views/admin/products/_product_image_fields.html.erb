@@ -1,0 +1,11 @@
+<div class="form-row nested-fields nested-image-fields">
+  <div class="form-group">
+    <%= f.label t("admin.products.index.quantity") %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <div class="form-group col-md-1 form-image">
+    <%= link_to_remove_association f, class: "remove-image" do %>
+      <i class="fa-solid fa-minus btn btn-danger"></i>
+    <% end %>
+  </div>
+</div>
