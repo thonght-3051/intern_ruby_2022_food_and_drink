@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :find_product, only: %i(edit update destroy)
+  before_action :find_product, except: %i(index new create)
   def index
     @pagy, @products = pagy Product.latest_product,
                             items: Settings.const.paginate
@@ -21,6 +21,8 @@ class Admin::ProductsController < ApplicationController
       render :new
     end
   end
+
+  def show; end
 
   def edit; end
 

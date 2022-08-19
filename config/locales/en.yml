@@ -70,6 +70,10 @@ en:
         alert_success_destroy: "Delete successfully"
         alert_err_destroy: "Delete fail"
         title_modal: "You want to delete #{name}"
+      show:
+        size: "Size"
+        price: "Price"
+        quantity: "Quantity"
   shared:
     nav:
       category: "Category"
