@@ -60,6 +60,12 @@ vi:
       create:
         success: "Tạo mới thành công"
         fail: "Tạo mới thất bại"
+      edit:
+        title: "Cập nhật sản phẩm"
+        update: "Cập nhật"
+      update:
+        alert_success_update: "Update successfully"
+        alert_err_update: "Update fail"
   shared:
     nav:
       category: "Danh mục"

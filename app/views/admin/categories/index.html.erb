@@ -17,10 +17,18 @@
             </tr>
           </thead>
           <tbody>
-            <%= render "category" %>
+            <% if @categories.present? %>
+              <%= render "category" %>
+              <%== pagy_bootstrap_nav @pagy %>
+            <% else %>
+              <tr class="text-center">
+                <td colspan="3">
+                  <%= t "empty" %>
+                </td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
-        <%== pagy_nav(@pagy) %>
       </div>
     </div>
   </div>

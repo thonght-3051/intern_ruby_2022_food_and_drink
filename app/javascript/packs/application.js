@@ -14,9 +14,9 @@ require('admin-lte');
 require("bootstrap");
 require("jquery");
 require("cocoon");
-import "admin-lte/dist/css/AdminLTE.css";
+// import "admin-lte/dist/css/AdminLTE.css";
 import "font-awesome/css/font-awesome.css";
-require('../stylesheets/application');
+// require('../stylesheets/application');
 import "@fortawesome/fontawesome-free/js/all";
 require("./product")
 
