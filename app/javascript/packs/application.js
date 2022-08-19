@@ -4,6 +4,7 @@
 // that code so it"ll be compiled.
 //= require jquery
 //= require jquery_ujs
+//= require toastr
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -18,12 +19,15 @@ require("cocoon");
 import "font-awesome/css/font-awesome.css";
 // require('../stylesheets/application');
 import "@fortawesome/fontawesome-free/js/all";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+window.Swal = Swal;
 require("./product")
 
 global.toastr = require("toastr")
-document.addEventListener("turbolinks:load", () => {
-  $('[data-toggle="tooltip"]').tooltip()
-});
+// document.addEventListener("turbolinks:load", () => {
+//   $('[data-toggle="tooltip"]').tooltip()
+// });
 
 Rails.start()
 Turbolinks.start()

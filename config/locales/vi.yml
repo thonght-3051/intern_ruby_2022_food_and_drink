@@ -66,6 +66,10 @@ vi:
       update:
         alert_success_update: "Update successfully"
         alert_err_update: "Update fail"
+      destroy:
+        alert_success_destroy: "Xóa thành công"
+        alert_err_destroy: "Xóa thất bại"
+        title_modal: "Bạn có muốn xóa #{name}"
   shared:
     nav:
       category: "Danh mục"
@@ -123,3 +127,5 @@ vi:
       not_found: "Không tìm thấ sản phẩm"
   submit: "Tạo mới"
   empty: "Trống!"
+  btn_ok: "Đồng ý"
+  btn_cancel: "Hủy bỏ"

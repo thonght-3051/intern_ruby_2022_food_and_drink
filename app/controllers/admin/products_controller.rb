@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :find_product, only: %i(edit update)
+  before_action :find_product, only: %i(edit update destroy)
   def index
     @pagy, @products = pagy Product.latest_product,
                             items: Settings.const.paginate
@@ -32,6 +32,11 @@ class Admin::ProductsController < ApplicationController
       flash[:danger] = t ".alert_err_update"
       render :edit
     end
+  end
+
+  def destroy
+    message, status = @product.destroy ? [t(".alert_success_destroy"), 200] : [t(".alert_err_destroy"), 500]
+    render json: {message: message, status: status}
   end
 
   private
