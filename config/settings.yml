@@ -1,4 +1,5 @@
 const:
+  paginate: 10
   users:
     name:
       length:

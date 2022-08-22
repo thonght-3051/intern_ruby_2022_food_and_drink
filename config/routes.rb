@@ -10,9 +10,10 @@ Rails.application.routes.draw do
 
     # Admin
     namespace :admin do
-      get 'home/index'
+      get "home/index"
       resources :categories
       resources :users
+      resources :products
     end
   end
 end

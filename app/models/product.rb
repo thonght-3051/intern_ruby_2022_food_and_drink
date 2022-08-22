@@ -7,4 +7,8 @@ class Product < ApplicationRecord
 
   scope :latest_product, ->{order created_at: :desc}
   delegate :name, to: :category, prefix: true
+
+  def sum_quantity
+    product_attributes.sum(:quantity)
+  end
 end
