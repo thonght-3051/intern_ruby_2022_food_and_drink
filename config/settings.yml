@@ -35,6 +35,12 @@ const:
     attribute:
       max: 1000000000000
       min: 0
+  orders:
+    status:
+      pending: 0
+      approved: 1
+      processing: 2
+      rejected: 3
 category:
   item_category: 5
 users:

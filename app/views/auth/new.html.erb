@@ -24,7 +24,7 @@
           <div class="input_field"> <span><i aria-hidden="true" class="fa fa-address-card"></i></span>
             <%= f.fields_for :addresses do |add| %>
               <%= add.text_field :name %>
-              <%= add.hidden_field :types, :value => Settings.const.users.address.type.default %>
+              <%= add.hidden_field :types, :value => "default" %>
             <% end %>
           </div>
           <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>

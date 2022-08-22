@@ -1,0 +1,24 @@
+<table class="table align-middle mb-0 bg-white table-product">
+  <thead class="bg-light">
+    <tr>
+      <th><%= t ".name" %></th>
+      <th><%= t ".phone" %></th>
+      <th><%= t ".address" %></th>
+      <th><%= t ".total" %></th>
+      <th><%= t ".status" %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @orders.present? %>
+      <%= render @orders %>
+      <%== pagy_bootstrap_nav @pagy %>
+    <% else %>
+      <tr>
+        <td class="text-center" colspan="6">
+          <%= t "empty" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

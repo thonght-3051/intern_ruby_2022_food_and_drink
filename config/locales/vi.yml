@@ -74,6 +74,13 @@ vi:
         size: "Kich cỡ"
         price: "Giá"
         quantity: "Số lượng"
+    orders:
+      index:
+        name: "Tên người đặt"
+        phone: "Số điện thoại"
+        address: "Địa chỉ"
+        total: "Tổng tiền"
+        status: "Trạng thái"
   shared:
     nav:
       category: "Danh mục"
@@ -82,6 +89,7 @@ vi:
       product: "Sản phẩm"
       user: "Người dùng"
       list_user: "Danh sách người dùng"
+      orders: "Đơn hàng"
     header:
       home: "Trang chủ"
       contact: "Liên hệ"
@@ -133,3 +141,9 @@ vi:
   empty: "Trống!"
   btn_ok: "Đồng ý"
   btn_cancel: "Hủy bỏ"
+  orders:
+    status:
+      approved: "Đã được xác nhận"
+      pending: "Đang chờ xác nhận"
+      processing: "Đang xử lý"
+      rejected: "Đã từ chối"
