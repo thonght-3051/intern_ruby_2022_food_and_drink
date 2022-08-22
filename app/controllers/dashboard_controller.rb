@@ -1,5 +1,7 @@
 class DashboardController < ApplicationController
+  include AuthHelper
   layout "dashboard"
+  skip_before_action :is_admin?
   def index
     @pagy, @products = pagy Product.latest_product,
                             items: Settings.products.item_product

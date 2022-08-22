@@ -9,7 +9,7 @@
     <%= user.phone %>
   </td>
   <td>
-    <%= user.addresses.default_types.first.name %>
+    <%= user.addresses.nil? ? user.addresses.where("types", 1).first.name : "" %>
   </td>
   <td>
     <%= user.status_i18n %>

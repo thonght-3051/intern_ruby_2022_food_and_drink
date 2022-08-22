@@ -6,11 +6,15 @@ class Order < ApplicationRecord
   enum status: {pending: 0, approved: 1, processing: 2, rejected: 3}
 
   delegate :name, to: :user, prefix: true
+  delegate :email, to: :user, prefix: true
   delegate :name, to: :address, prefix: true
 
   class << self
-    def statuses_i18n
+    def statuses_i18n status = nill
       statuses.each_with_object({}) do |(k, _), obj|
+        next if k == "pending"
+        next if status.present? && k == status
+
         obj[I18n.t("orders.status.#{k}")] = k
       end
     end

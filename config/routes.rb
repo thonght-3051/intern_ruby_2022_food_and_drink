@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
+    root to: "dashboard#index"
     resources :dashboard, only: %i(index show)
     # Auth
     get "auth/register", to: "auth#new"

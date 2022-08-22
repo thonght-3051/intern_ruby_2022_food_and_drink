@@ -1,8 +1,16 @@
 class ApplicationController < ActionController::Base
+  include AuthHelper
   include Pagy::Backend
   protect_from_forgery with: :exception
 
-  before_action :set_locale
+  before_action :set_locale, :is_admin?
+
+  def is_admin?
+    return if logged_in? && current_user.role.admin?
+
+    redirect_to root_url
+  end
+
   private
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

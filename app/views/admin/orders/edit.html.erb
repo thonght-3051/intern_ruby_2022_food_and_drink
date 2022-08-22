@@ -1,0 +1,21 @@
+<%= provide :title, t(".title") %>
+<div class="card card-danger">
+  <div class="card-header">
+  </div>
+  <%= form_for [:admin, @order] do |f| %>
+    <div class="text-red">
+      <%= render "shared/error_messages", object: f.object %>
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= f.label t(".status") %>
+          <%= f.select :status, Order.statuses_i18n(@order.status), {}, {class: "form-control"} %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= f.submit t(".btn_edit"), class: "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>

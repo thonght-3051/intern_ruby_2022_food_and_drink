@@ -1,6 +1,7 @@
 class AuthController < ApplicationController
   include AuthHelper
   layout "auth"
+  skip_before_action :is_admin?
   def new
     @user = User.new
     @address = @user.addresses.new
@@ -9,9 +10,10 @@ class AuthController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      log_in @user
       redirect_to root_url
     else
-      flash[:danger] = t "register_fail"
+      flash.now[:danger] = t "register_fail"
       render :new
     end
   end

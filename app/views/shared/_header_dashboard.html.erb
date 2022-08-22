@@ -45,6 +45,25 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="checkout.html">Checkout</a> </div>
           </li>
+          <% if logged_in? %>
+            <li class="nav-item">
+              <p class="nav-link">
+              <%= current_user.name %>
+              </p>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to t("btn_register"), auth_register_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t("login"), auth_login_path, class: "nav-link" %>
+            </li>
+          <% end %>
+          <% if logged_in? %>
+            <li class="nav-item">
+              <%= link_to t("logout"), auth_logout_path, class: "nav-link" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
