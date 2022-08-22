@@ -1,0 +1,25 @@
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 food-item">
+  <div class="food-item-wrap">
+    <div class="figure-wrap bg-image" style="background:url('<%= product.product_images.first.image %>')">
+      <div class="rating pull-left">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+    </div>
+    <div class="content">
+      <h5><a href="#"><%= product.name %></a></h5>
+      <div class="product-name"><%= product.category_name %></div>
+      <div class="price-btn-block">
+        <span class="price">$
+          <%= product.product_attributes.first.price %>
+        </span>
+        <a href="profile.html" class="btn theme-btn-dash pull-right"><%= t ".order_now" %></a>
+      </div>
+    </div>
+    <div class="restaurant-block">
+    </div>
+  </div>
+</div>

@@ -4,11 +4,39 @@
     <title><%= full_title yield :title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "plugin/css/style", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_pack_tag "dashboard", "data-turbolinks-track": "reload" %>
   </head>
   <body>
-    <%= yield %>
+    <div class="site-wrapper" data-animsition-in="fade-in" data-animsition-out="fade-out">
+      <%= render "shared/header_dashboard" %>
+      <div class="page-wrapper">
+        <div class="top-links">
+          <div class="container">
+            <ul class="row links">
+              <li class="col-xs-12 col-sm-3 link-item">
+                <span>1</span><a href="index.html">Choose Your Location</a>
+              </li>
+              <li class="col-xs-12 col-sm-3 link-item">
+                <span>2</span><a href="restaurants.html">Choose Restaurant</a>
+              </li>
+              <li class="col-xs-12 col-sm-3 link-item active">
+                <span>3</span><a href="profile.html">Pick Your favorite food</a>
+              </li>
+              <li class="col-xs-12 col-sm-3 link-item">
+                <span>4</span><a href="checkout.html">Order and Pay online</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="inner-page-hero bg-image" style="background:url(<%= asset_path 'images/profile-banner.jpg' %>)">
+          <div class="container"> </div>
+        </div>
+        <div class="result-show">
+          <%= yield %>
+          <%= render "shared/footer_dashboard" %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

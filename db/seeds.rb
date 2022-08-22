@@ -38,3 +38,39 @@ users.each { |user| user.addresses.create!(
   types: rand(2) == 1 ? 0 : 1
   )
 }
+
+Size.create!(name: "S")
+Size.create!(name: "M")
+Size.create!(name: "L")
+Size.create!(name: "XL")
+
+6.times do |n|
+  name = Faker::Commerce.brand
+  Category.create!(
+    name: name,
+    status: 0
+  )
+end
+
+20.times do |n|
+  name = Faker::Commerce.product_name
+  description = Faker::Lorem.sentence(word_count: 100)
+  Product.create!(
+    name: name,
+    description: description,
+    status: 1,
+    category_id: Faker::Number.between(from: 1, to: 6)
+  )
+end
+
+Product.all.each { |pro| pro.product_attributes.create!(
+  price: Faker::Commerce.price,
+  quantity: 100,
+  size_id: Faker::Number.between(from: 1, to: 4)
+  )
+}
+
+Product.all.each { |pro| pro.product_images.create!(
+  image: Faker::LoremFlickr.image
+  )
+}

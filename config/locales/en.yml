@@ -2,6 +2,8 @@ en:
   layouts:
     application:
       base_title: "InternRuby2022FoodAndDrink"
+    dashboard:
+      base_title: "InternRuby2022FoodAndDrink"
   admin:
     home:
       index:
@@ -83,3 +85,12 @@ en:
     status:
       block: "Default"
       active: "Undefault"
+  pages:
+    products_landing:
+      title: "Shop page"
+      size: "Size"
+      category: "Category"
+      price_range: "Price range"
+      filter_range: "Filter by price"
+    product:
+      order_now: "Order now"

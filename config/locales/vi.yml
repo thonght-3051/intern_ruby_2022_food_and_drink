@@ -2,6 +2,8 @@ vi:
   layouts:
     application:
       base_title: "InternRuby2022FoodAndDrink"
+    dashboard:
+      base_title: "InternRuby2022FoodAndDrink"
   admin:
     home:
       index:
@@ -83,3 +85,12 @@ vi:
     status:
       block: "Khóa"
       active: "Hoạt động"
+  pages:
+    products_landing:
+      title: "Trang cửa hàng"
+      size: "Kích thước"
+      category: "Danh mục"
+      price_range: "Phạm vi giá"
+      filter_range: "Lọc theo giá"
+    product:
+      order_now: "Đặt hàng"
