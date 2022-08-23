@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_15_043146) do
+ActiveRecord::Schema.define(version: 2022_08_23_090352) do
 
   create_table "addresses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 2022_08_15_043146) do
   create_table "order_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "price"
     t.integer "quantity"
-    t.bigint "product_id", null: false
+    t.bigint "product_attributes_id"
     t.bigint "order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_order_details_on_order_id"
-    t.index ["product_id"], name: "index_order_details_on_product_id"
+    t.index ["product_attributes_id"], name: "index_order_details_on_product_attributes_id"
   end
 
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2022_08_15_043146) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "order_details", "orders"
-  add_foreign_key "order_details", "products"
+  add_foreign_key "order_details", "product_attributes", column: "product_attributes_id"
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "users"
   add_foreign_key "product_attributes", "products"
