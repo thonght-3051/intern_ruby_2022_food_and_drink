@@ -105,3 +105,7 @@ vi:
       filter_range: "Lọc theo giá"
     product:
       order_now: "Đặt hàng"
+    show:
+      order_now: "Đặt hàng "
+      in_stock: "trong kho hàng"
+      not_found: "Không tìm thấ sản phẩm"

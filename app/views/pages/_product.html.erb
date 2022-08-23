@@ -10,7 +10,11 @@
       </div>
     </div>
     <div class="content">
-      <h5><a href="#"><%= product.name %></a></h5>
+      <h5>
+        <%= link_to dashboard_path(product) do %>
+          <%= product.name %>
+        <% end %>
+      </h5>
       <div class="product-name"><%= product.category_name %></div>
       <div class="price-btn-block">
         <span class="price">$

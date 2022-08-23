@@ -1,0 +1,58 @@
+<section class="restaurants-page">
+  <div class="container">
+    <div class="row d-flex justify-content-between mt-2">
+      <div class="col-md-6 col-xs-12">
+        <div class="product-card">
+          <div class = "product-imgs">
+            <div class = "img-display">
+              <div class = "img-showcase">
+                <img src = "<%= @product.product_images.first.image %>" alt = "<%= @product.name %>">
+              </div>
+            </div>
+            <div class = "img-select">
+              <% @product.product_images.each do |img| %>
+                <div class = "img-item">
+                  <a href = "#" data-id = "<%= img.id%>">
+                    <img src = "<%= img.image %>" alt = "<%= @product.name %>" class="img-child">
+                  </a>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-xs-12">
+        <div class="product-info">
+          <h1 class="product-name"><%= @product.name %></h1>
+          <p class="discount-price" id="pro_price">
+            <%= number_to_currency(@product.product_attributes.pluck(:price).min, :locale => :en) %> -
+            <%= number_to_currency(@product.product_attributes.pluck(:price).max, :locale => :en) %>
+          </p>
+          <p class="offer-info"><%= @product.description%></p>
+          <hr>
+          <div class="cable-config">
+            <h3><%= t ".quantity" %></h3>
+            <p id="pro_quantity"><%= @product.product_attributes.first.quantity %> <%= t ".in_stock" %> </p>
+          </div>
+          <div class="cable-config">
+            <div class="cable-choose">
+              <% @product.product_attributes.each do |att| %>
+                <button class="btn-select-size" id="<%= att.id %>" data-price="<%= att.price %>" data-quantity="<%= att.quantity %>">
+                  <%= att.size.name%>
+                </button>
+              <% end %>
+            </div>
+          </div>
+          <div class="number-input">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+            <input class="quantity" min="0" name="quantity" value="1" type="number">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+          </div>
+          <div class="number-input">
+          </div>
+          <a href="#" class="btn theme-btn-dash pull-right"><%= t ".order_now" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
