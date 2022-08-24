@@ -23,9 +23,9 @@
     <button type="button" class="btn text-primary btn-sm btn-rounded">
       <i class="fa-solid fa-eye"></i>
     </button>
-    <button type="button" class="btn text-warning btn-sm btn-rounded">
-      <i class="fas fa-edit"></i>
-    </button>
+    <%= link_to edit_admin_product_path(product), class: "btn text-warning btn-sm btn-rounded" do %>
+      <i class=" fas fa-edit" aria-hidden="true"></i>
+    <% end %>
     <button type="button" class="btn text-danger btn-sm btn-rounded">
       <i class="fa-solid fa-trash-can"></i>
     </button>

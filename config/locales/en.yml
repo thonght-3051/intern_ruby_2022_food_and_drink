@@ -60,6 +60,12 @@ en:
       create:
         success: "Create successfully"
         fail: "Create fail"
+      edit:
+        title: "Update product"
+        update: "Update"
+      update:
+        alert_success_create: "Update successfully"
+        alert_err_create: "Update fail"
   shared:
     nav:
       category: "Category"
