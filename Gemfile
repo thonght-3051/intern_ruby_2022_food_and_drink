@@ -6,6 +6,8 @@ ruby "2.7.0"
 gem "bcrypt", "~> 3.1.11"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass"
+gem "carrierwave"
+gem "cocoon"
 gem "config"
 gem "faker"
 gem "font-awesome-sass"

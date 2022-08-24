@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 2022_08_23_090352) do
   create_table "order_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.float "price"
     t.integer "quantity"
+    t.bigint "product_attribute_id"
     t.bigint "order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "product_attributes_id"
     t.index ["order_id"], name: "index_order_details_on_order_id"
-    t.index ["product_attributes_id"], name: "index_order_details_on_product_attributes_id"
+    t.index ["product_attribute_id"], name: "index_order_details_on_product_attribute_id"
   end
 
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2022_08_23_090352) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["name"], name: "index_products_on_name", unique: true
   end
 
   create_table "sizes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -112,7 +113,7 @@ ActiveRecord::Schema.define(version: 2022_08_23_090352) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "order_details", "orders"
-  add_foreign_key "order_details", "product_attributes", column: "product_attributes_id"
+  add_foreign_key "order_details", "product_attributes"
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "users"
   add_foreign_key "product_attributes", "products"

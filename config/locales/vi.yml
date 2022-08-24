@@ -53,7 +53,13 @@ vi:
         category: "Danh mục"
         new: "Thêm mới"
       new:
+        title: "Tạo mới sản phẩm"
         create: "Tạo"
+        category_not_exists: "Danh mục không tồn tại"
+        validate_image: "Hình ảnh không đúng định dạng"
+      create:
+        success: "Tạo mới thành công"
+        fail: "Tạo mới thất bại"
   shared:
     nav:
       category: "Danh mục"
@@ -109,3 +115,5 @@ vi:
       order_now: "Đặt hàng "
       in_stock: "trong kho hàng"
       not_found: "Không tìm thấ sản phẩm"
+  submit: "Tạo mới"
+  empty: "Trống!"
