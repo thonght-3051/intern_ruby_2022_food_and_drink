@@ -1,6 +1,9 @@
 class ProductAttribute < ApplicationRecord
   belongs_to :product
   belongs_to :size
+
+  delegate :name, to: :size, prefix: true
+
   validates :price, presence: true, numericality: {
     only_integer: true,
     greater_than: Settings.const.products.attribute.min,

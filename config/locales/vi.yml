@@ -70,6 +70,10 @@ vi:
         alert_success_destroy: "Xóa thành công"
         alert_err_destroy: "Xóa thất bại"
         title_modal: "Bạn có muốn xóa #{name}"
+      show:
+        size: "Kich cỡ"
+        price: "Giá"
+        quantity: "Số lượng"
   shared:
     nav:
       category: "Danh mục"

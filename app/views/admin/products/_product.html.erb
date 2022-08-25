@@ -1,7 +1,7 @@
 <tr>
   <td>
     <div class="d-flex align-items-center">
-      <%= image_tag product.product_images.first.image_url, class: "product_image" %>
+      <%= image_tag display_image(product), class: "product_image" %>
       <div class="ms-3">
         <p class="fw-bold mb-1">
           <%= product.name %>
@@ -20,9 +20,9 @@
     </p>
   </td>
   <td class="text-center pt-3">
-    <button type="button" class="btn text-primary btn-sm btn-rounded">
+    <%= link_to admin_product_path(product), class: "btn text-primary btn-sm btn-rounded" do %>
       <i class="fa-solid fa-eye"></i>
-    </button>
+    <% end %>
     <%= link_to edit_admin_product_path(product), class: "btn text-warning btn-sm btn-rounded" do %>
       <i class=" fas fa-edit" aria-hidden="true"></i>
     <% end %>

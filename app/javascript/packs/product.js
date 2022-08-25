@@ -48,7 +48,7 @@ $(document).ready(function () {
   $(window).bind('load', function () {
     if (localStorage.getItem("flash") != null) {
       toastr.success(localStorage.getItem("flash"))
-      LocalStorage.removeItem("flash")
+      localStorage.removeItem("flash")
     }
   })
 })
