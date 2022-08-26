@@ -25,9 +25,12 @@
     </p>
   </td>
   <td class="text-center pt-3">
-    <%= link_to edit_admin_order_path(order), class: "btn text-warning btn-sm btn-rounded" do %>
+    <%= link_to edit_admin_order_path(order), "data-id": order.id, "data-status": order.status, remote: true, class: "btn btn-update-orders text-warning btn-sm btn-rounded" do %>
       <i class="fas fa-edit"></i>
     <% end %>
   </td>
 </tr>
-
+<div class="modal modal-<%= order.id %>">
+  <div class="modal-content">
+  </div>
+</div>

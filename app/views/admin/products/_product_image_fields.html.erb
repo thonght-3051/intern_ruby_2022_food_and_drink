@@ -1,11 +1,12 @@
 <div class="form-row nested-fields nested-image-fields">
   <div class="form-group">
-    <%= f.label t("admin.products.index.quantity") %>
+    <%= f.label t("admin.products.new.image") %>
+    <i class="text-danger fa fa-asterisk" aria-hidden="true"></i>
     <%= f.file_field :image, class: "form-control" %>
   </div>
   <div class="form-group col-md-1 form-image">
-    <%= link_to_remove_association f, class: "remove-image" do %>
-      <i class="fa-solid fa-minus btn btn-danger"></i>
+    <%= link_to_remove_association f, class: "remove-image", title: t("admin.products.new.remove_image") do %>
+      <i class="fa-solid fa-minus btn btn-primary"></i>
     <% end %>
   </div>
 </div>

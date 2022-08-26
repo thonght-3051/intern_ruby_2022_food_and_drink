@@ -31,7 +31,8 @@ en:
         status: "Status"
       destroy:
         alert_success_delete: "Delete successfully"
-        alert_err_delete: "Delete category fail"
+        alert_err_delete: "Category has product in other orders, please check before delete it!"
+        warning_delete: "If you delete %{name}, all product of it will be delete"
       form:
         name: "Name"
         status: "Status"
@@ -57,6 +58,11 @@ en:
         create: "Create"
         category_not_exists: "Category not exists"
         validate_image: "Wrong image format"
+        image: "Image"
+        add_row: "Add rows input attributes product"
+        add_image: "Add rows input image product"
+        remove_row: "Remove rows input attributes product"
+        remove_image: "Remove rows input image product"
       create:
         success: "Create successfully"
         fail: "Create fail"
@@ -69,7 +75,7 @@ en:
       destroy:
         alert_success_destroy: "Delete successfully"
         alert_err_destroy: "Delete fail"
-        title_modal: "You want to delete #{name}"
+        title_modal: "You want to delete %{name}"
       show:
         size: "Size"
         price: "Price"
@@ -169,3 +175,10 @@ en:
       pending: "Pending"
       processing: "Processing"
       rejected: "Rejected"
+  validate:
+    required: "Required"
+    min_length: "Minimum %{number} characters"
+    max_length: "Maximum %{number} characters"
+    min: "Value must be greater than %{number}"
+    max: "Value must be less than %{number}"
+    name_exists: "Name existed"

@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-header">
         <div class="card-tools">
-          <%= link_to t(".new_category") , new_admin_category_path, remote: true, class: "btn btn-primary" %>
+          <%= link_to t(".new_category") , new_admin_category_path, remote: true, class: "btn-modal btn btn-primary" %>
         </div>
       </div>
       <div class="card-body table-responsive p-0">
@@ -31,5 +31,11 @@
         </table>
       </div>
     </div>
+  </div>
+</div>
+<div class="modal">
+  <div class="modal-content">
+    <% provide :button_text, t("admin.categories.new.new_category") %>
+    <%= render "form" %>
   </div>
 </div>

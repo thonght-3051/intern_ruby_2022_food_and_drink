@@ -15,6 +15,7 @@
     "cocoon": "github:nathanvda/cocoon#c24ba53",
     "font-awesome": "4.7.0",
     "jquery": "^3.6.0",
+    "jquery-validation": "^1.19.5",
     "popper.js": "^1.16.1",
     "sass-loader": "10.1.1",
     "sweetalert2": "^11.4.29",

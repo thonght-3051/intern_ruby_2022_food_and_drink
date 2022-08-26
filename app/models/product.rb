@@ -1,13 +1,8 @@
 class Product < ApplicationRecord
-  PARAMS_PRODUCTS = %i(
-    name description category_id
-    product_attributes_attributes: [:id size_id price quantity _destroy]
-    product_images_attributes: [:id product_id _destroy image]
-  ).freeze
-
   belongs_to :category
   has_many :votes, dependent: :destroy
   has_many :product_attributes, dependent: :destroy
+  has_many :order_details, dependent: :destroy, through: :product_attributes
   has_many :product_images, dependent: :destroy
 
   scope :latest_product, ->{order created_at: :desc}

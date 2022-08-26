@@ -2,7 +2,9 @@ class Admin::CategoriesController < ApplicationController
   before_action :find_category, except: %i(new create index)
   before_action :get_all_category, only: %i(index destroy)
 
-  def index; end
+  def index
+    @category = Category.new
+  end
 
   def show; end
 
@@ -34,15 +36,27 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    if @category.destroy
-      flash[:success] = t ".alert_success_delete"
+    if check_orders_product_in_category?
+      message, status = @category.destroy ? [t(".alert_success_destroy"), 200] : [t(".alert_err_destroy"), 500]
+      render json: {message: message, status: status}
     else
-      flash[:danger] = t ".alert_err_delete"
+      throw StandardError
     end
-    redirect_to admin_categories_path
   end
 
   private
+
+  def check_orders_product_in_category?
+    count_order = []
+    @category.products.each do |f|
+      next if f.order_details.count.zero?
+
+      count_order << f.order_details.count
+      break if count_order.present?
+    end
+
+    count_order.blank?
+  end
 
   def category_params
     params.require(:category).permit Category::ATTR_CATE

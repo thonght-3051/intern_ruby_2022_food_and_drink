@@ -1,19 +1,22 @@
 <div class="form-row nested-fields nested-attr-fields">
   <div class="form-group col-md-3 mb-3">
     <%= f.label t("admin.products.index.size") %>
+    <i class="text-danger fa fa-asterisk" aria-hidden="true"></i>
     <%= f.select :size_id, Size.pluck(:name, :id), {}, {class: "form-control"} %>
   </div>
   <div class="form-group col-md-4 mb-3">
     <%= f.label t("admin.products.index.price") %>
+    <i class="text-danger fa fa-asterisk" aria-hidden="true"></i>
     <%= f.text_field :price, class: "form-control" %>
   </div>
   <div class="form-group col-md-4 mb-3">
     <%= f.label t("admin.products.index.quantity") %>
+    <i class="text-danger fa fa-asterisk" aria-hidden="true"></i>
     <%= f.text_field :quantity, class: "form-control" %>
   </div>
   <div class="form-group col-md-1 minus-attr">
-    <%= link_to_remove_association f, class: "remove-attr" do %>
-      <i class="fa-solid fa-minus btn btn-danger"></i>
+    <%= link_to_remove_association f, class: "remove-attr", title: t("admin.products.new.remove_row") do %>
+      <i class="fa-solid fa-minus btn btn-primary"></i>
     <% end %>
   </div>
 </div>
