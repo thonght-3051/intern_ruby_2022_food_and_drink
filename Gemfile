@@ -20,6 +20,8 @@ gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6", ">= 6.1.6.1"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "simplecov"
+gem "simplecov-rcov"
 gem "toastr_rails"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
@@ -46,7 +48,11 @@ end
 
 group :test do
   gem "capybara", ">= 3.26"
+  gem "database_cleaner"
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
   gem "selenium-webdriver", ">= 4.0.0.rc1"
+  gem "shoulda-matchers", "~> 5.0"
   gem "webdrivers"
 end
 
