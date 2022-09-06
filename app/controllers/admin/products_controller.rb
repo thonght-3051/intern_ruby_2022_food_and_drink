@@ -37,7 +37,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    message, status = @product.destroy ? [t(".alert_success_destroy"), 200] : [t(".alert_err_destroy"), 500]
+    message, status = @product.destroy ? [t(".alert_success_destroy"), 200] : [t(".alert_err_destroy"), 404]
     render json: {message: message, status: status}
   end
 
