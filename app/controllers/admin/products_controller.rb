@@ -1,5 +1,7 @@
 class Admin::ProductsController < ApplicationController
+  include AuthHelper
   before_action :find_product, except: %i(index new create)
+  authorize_resource
   def index
     @pagy, @products = pagy Product.latest_product,
                             items: Settings.const.paginate

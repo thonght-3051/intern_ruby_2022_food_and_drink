@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale, :is_admin?
 
   def is_admin?
-    return if logged_in? && current_user.role.admin?
+    return if logged_in? && current_user.admin?
 
     redirect_to root_url
   end
@@ -32,5 +32,16 @@ class ApplicationController < ActionController::Base
       format.xml{head :not_found}
       format.any{head :not_found}
     end
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.json{head :forbidden}
+      format.html{redirect_to admin_home_index_path, alert: exception.message}
+    end
+  end
+
+  def current_ability
+    @current_ability ||= Ability.new(current_user)
   end
 end
