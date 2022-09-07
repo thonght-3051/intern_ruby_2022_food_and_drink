@@ -1,6 +1,17 @@
 import { data } from "jquery";
-
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
+  $(".select-category").select2({
+    maximumSelectionLength: 3,
+    width: "100%"
+  });
+  $(".select-category").on("select2:select", function (e) {
+    var $e = $("<li>" + e.params.data.name + "</li>");
+    $e.animate({ opacity: 1 }, 10000, 'linear', function () {
+      $e.animate({ opacity: 0 }, 2000, 'linear', function () {
+        $e.remove();
+      });
+    });
+  });
   let attrClass = $(document).find(".nested-attr-fields");
   let imageClass = $(document).find(".nested-image-fields");
   if (attrClass.length == 1) {
@@ -193,6 +204,8 @@ $(document).ready(function () {
     })
   })
 
+  $('b[role="presentation"]').hide();
+  $('.select2-selection__arrow').append('<i class="fa fa-angle-down"></i>');
 
   $(window).bind('load', function () {
     if (localStorage.getItem("flash") != null) {

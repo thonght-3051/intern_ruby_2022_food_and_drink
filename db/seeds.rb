@@ -27,7 +27,7 @@ User.create!(
     phone: phone,
     password: password,
     password_confirmation: password,
-    role: 2,
+    role: 1,
     status: 1
   )
 end
@@ -40,7 +40,7 @@ users.each { |user| user.addresses.create!(
 }
 
 6.times do |n|
-  name = Faker::Commerce.brand
+  name = Faker::Commerce.unique.brand
   Category.create!(
     name: name,
     status: 0
@@ -55,7 +55,7 @@ Size.create!([
 ])
 
 20.times do |n|
-  name = Faker::Commerce.product_name
+  name = Faker::Commerce.unique.product_name
   description = Faker::Lorem.sentence(word_count: 100)
   Product.create!(
     name: name,

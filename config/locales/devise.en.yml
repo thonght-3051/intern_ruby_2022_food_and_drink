@@ -63,6 +63,7 @@ en:
       length:
         min: "Length must be more than %{number} characters"
         max: "Length must be less than %{number} characters"
+      equal: "Confirmation password does not match"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

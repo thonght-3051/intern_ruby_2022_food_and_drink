@@ -5,6 +5,8 @@ class Product < ApplicationRecord
     product_images_attributes: [:id product_id _destroy image]
   ).freeze
 
+  ransack_alias :category, :category_id
+
   belongs_to :category
   has_many :votes, dependent: :destroy
   has_many :product_attributes, dependent: :destroy
@@ -12,6 +14,10 @@ class Product < ApplicationRecord
   has_many :product_images, dependent: :destroy
 
   scope :latest_product, ->{order created_at: :desc}
+  scope :by_start_date,
+        ->(start_date){where("created_at >= :start_date", start_date: start_date)}
+  scope :by_end_date,
+        ->(end_date){where("created_at <= :end_date", end_date: end_date)}
   delegate :name, to: :category, prefix: true
 
   accepts_nested_attributes_for :product_attributes, :product_images, allow_destroy: true
@@ -29,5 +35,13 @@ class Product < ApplicationRecord
 
   def sum_quantity
     product_attributes.sum(:quantity)
+  end
+
+  ransacker :created_at, type: :date do
+    Arel.sql("date(created_at)")
+  end
+
+  def self.ransackable_scopes _auth_object = nil
+    %i(by_start_date by_end_date)
   end
 end

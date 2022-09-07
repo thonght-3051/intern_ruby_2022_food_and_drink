@@ -14,3 +14,31 @@
 .product_image_thumb {
   max-width: 100% !important;
 }
+
+.selection {
+  display: block;
+  width: 100%;
+}
+
+.select2-selection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select2-results__options {
+  background: #ddd;
+  padding: 0;
+}
+
+.select2-container {
+  display: flex;
+}
+
+.select2-container input{
+  width: 100%;
+}
+
+.select2-dropdown {
+  overflow: hidden;
+  max-height: 175px;
+}
