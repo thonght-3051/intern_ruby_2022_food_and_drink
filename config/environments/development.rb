@@ -1,6 +1,17 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = {host: ENV["host"]}
+  config.action_mailer.smtp_settings = {
+    :user_name => '85b6e8311b3f53',
+    :password => '030c031ba490da',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5,
+    enable_starttls_auto: true
+  }
   # Settings specified here will take precedence over those in config/application.rb.
   config.middleware.use I18n::JS::Middleware
 

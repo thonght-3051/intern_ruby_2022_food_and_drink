@@ -1,10 +1,23 @@
 class Admin::ProductsController < ApplicationController
+<<<<<<< HEAD
   include AuthHelper
   before_action :find_product, except: %i(index new create)
   authorize_resource
+=======
+  # include AuthHelper
+  # before_action :find_product, except: %i(index new create)
+  load_and_authorize_resource
+>>>>>>> Task devise
   def index
-    @pagy, @products = pagy Product.latest_product,
-                            items: Settings.const.paginate
+    param_filter = params[:q].reject{|_, v| v == "-1"} if params[:q].present?
+    @q = Product.ransack(param_filter)
+    respond_to do |f|
+      f.html {
+        @pagy, @products = pagy @q.result.includes(:category, :product_attributes),
+                                items: Settings.const.paginate
+      }
+      f.json { render json: Category.all }
+    end
   end
 
   def new

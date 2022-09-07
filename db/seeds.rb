@@ -11,8 +11,8 @@ User.create!(
   name: "admin",
   phone: "0123456789",
   email: "admin@gmail.com",
-  password: "123123",
-  password_confirmation: "123123",
+  password: "123@123Aa",
+  password_confirmation: "123@123Aa",
   role: 2,
   status: 1
 )
@@ -40,7 +40,7 @@ users.each { |user| user.addresses.create!(
 }
 
 6.times do |n|
-  name = Faker::Commerce.brand
+  name = Faker::Commerce.unique.brand
   Category.create!(
     name: name,
     status: 0
@@ -55,7 +55,7 @@ Size.create!([
 ])
 
 20.times do |n|
-  name = Faker::Commerce.product_name
+  name = Faker::Commerce.unique.product_name
   description = Faker::Lorem.sentence(word_count: 100)
   Product.create!(
     name: name,

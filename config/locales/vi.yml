@@ -194,3 +194,5 @@ vi:
         text_confirm: "Nếu không thực hiện yêu cầu này, chỉ cần bỏ qua email này. Nếu không, vui lòng nhấp vào nút bên dưới để thay đổi mật khẩu của bạn:"
   or: "Hoặc"
   login_google: "Tiếp tục với Google"
+  all: "Tất cả"
+  seach: "Tìm kiếm"

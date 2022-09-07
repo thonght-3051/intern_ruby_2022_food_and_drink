@@ -5,6 +5,8 @@ class Product < ApplicationRecord
     product_images_attributes: [:id product_id _destroy image]
   ).freeze
 
+  ransack_alias :category, :category_id
+
   belongs_to :category
   has_many :votes, dependent: :destroy
   has_many :product_attributes, dependent: :destroy

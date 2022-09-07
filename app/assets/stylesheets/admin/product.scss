@@ -14,3 +14,12 @@
 .product_image_thumb {
   max-width: 100% !important;
 }
+
+.select2-selection {
+  display: block;
+}
+
+.select2-results__options {
+  background: #ddd;
+  padding: 0;
+}

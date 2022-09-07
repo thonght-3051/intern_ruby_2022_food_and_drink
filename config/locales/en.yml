@@ -197,3 +197,5 @@ en:
         text_confirm: "If did not make this request, just ignore this email. Otherwise, please click the button below to change your password:"
   or: "Or"
   login_google: "continue with Google"
+  all: "All"
+  seach: "Seach"
