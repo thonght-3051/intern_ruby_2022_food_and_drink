@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <% if @orders.present? %>
+    <% if @orders.present? && can?(:read, Order) %>
       <%= render @orders %>
       <%== pagy_bootstrap_nav @pagy %>
     <% else %>

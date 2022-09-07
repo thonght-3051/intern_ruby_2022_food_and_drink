@@ -55,6 +55,11 @@ vi:
         quantity: "Số lượng"
         category: "Danh mục"
         new: "Thêm mới"
+        date_create: "Ngày tạo"
+        date_range: "Khoảng thời gian"
+        start_date: "Ngày bắt đầu"
+        end_date: "Ngày kết thúc"
+        all: "Tất cả"
       new:
         title: "Tạo mới sản phẩm"
         create: "Tạo"
@@ -194,3 +199,5 @@ vi:
         text_confirm: "Nếu không thực hiện yêu cầu này, chỉ cần bỏ qua email này. Nếu không, vui lòng nhấp vào nút bên dưới để thay đổi mật khẩu của bạn:"
   or: "Hoặc"
   login_google: "Tiếp tục với Google"
+  all: "Tất cả"
+  seach: "Tìm kiếm"

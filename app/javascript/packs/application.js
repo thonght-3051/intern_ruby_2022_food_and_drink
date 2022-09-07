@@ -18,6 +18,7 @@ require('admin-lte');
 require("bootstrap");
 require("jquery");
 require("jquery-validation")
+require("select2")
 require("cocoon");
 // import "admin-lte/dist/css/AdminLTE.css";
 import "font-awesome/css/font-awesome.css";
