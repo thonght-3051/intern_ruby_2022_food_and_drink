@@ -1,0 +1,16 @@
+vi:
+  devise:
+    omniauth_callbacks:
+      failure: "Không thể xác thực bạn từ %{kind} vì \"%{reason}\"."
+      success: "Đã xác thực thành công từ tài khoản %{kind}."
+    failure:
+      user:
+        invalid: "Thông tin tài khoản hoặc mật khẩu không chính xác"
+    validate:
+      required: "Không được để trống"
+      wrong_format_email: "Địa chỉ email không đúng định dạng"
+      wrong_format_pw: "Mật khẩu phải bao gồm chữ, số và kí tự đặc biệt"
+      wrong_format_phone: "Số điện thoại không đúng định dạng"
+      length:
+        min: "Độ dài phải lớn hơn %{number} ký tự"
+        max: "Độ dài phải nhỏ hơn %{number} ký tự"

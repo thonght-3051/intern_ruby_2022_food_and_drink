@@ -28,6 +28,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 window.Swal = Swal;
 require("./product")
 require("./common");
+require("./auth")
 
 global.toastr = require("toastr")
 // document.addEventListener("turbolinks:load", () => {

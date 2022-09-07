@@ -7,7 +7,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
   let(:category){ FactoryBot.create :category }
 
   before do
-    log_in admin
+    sign_in :user, admin
   end
 
   describe "GET admin/products#index" do

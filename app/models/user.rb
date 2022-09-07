@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, omniauth_providers: [:google_oauth2]
   has_many :addresses, dependent: :destroy
   has_many :orders, dependent: :destroy
   accepts_nested_attributes_for :addresses, allow_destroy: true
@@ -24,9 +27,8 @@ class User < ApplicationRecord
     format: {with: Settings.const.users.email.regex},
     uniqueness: true
 
-  validates :phone, presence: true, uniqueness: true
+  # validates :phone, presence: true, uniqueness: true
 
-  has_secure_password
   validates :password, presence: true,
     length: {minimum: Settings.const.users.password.length.min},
     allow_nil: true
@@ -41,6 +43,14 @@ class User < ApplicationRecord
     def statuses_i18n
       statuses.each_with_object({}) do |(k, _), obj|
         obj[I18n.t("user.status.#{k}")] = k
+      end
+    end
+
+    def from_omniauth auth
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.name = auth.info.name
+        user.email = auth.info.email
+        user.password = Devise.friendly_token[0, 20]
       end
     end
   end

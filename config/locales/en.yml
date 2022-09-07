@@ -4,6 +4,8 @@ en:
       base_title: "InternRuby2022FoodAndDrink"
     dashboard:
       base_title: "InternRuby2022FoodAndDrink"
+    devise:
+      base_title: "InternRuby2022FoodAndDrink"
   admin:
     home:
       index:
@@ -182,3 +184,16 @@ en:
     min: "Value must be greater than %{number}"
     max: "Value must be less than %{number}"
     name_exists: "Name existed"
+  forgot_password: "Forgot password?"
+  remember_me: "Remember me"
+  reset_password: "Reset password"
+  change_password: "Change password"
+  new_password: "New password"
+  confirm_password: "Password confirmation"
+  devise:
+    mailer:
+      reset_password_instructions:
+        text_reset: "There was a request to change your password!"
+        text_confirm: "If did not make this request, just ignore this email. Otherwise, please click the button below to change your password:"
+  or: "Or"
+  login_google: "continue with Google"

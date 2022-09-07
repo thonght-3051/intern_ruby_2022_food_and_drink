@@ -1,0 +1,24 @@
+<%= provide :title, t("change_password") %>
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="row clearfix">
+      <div class="">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <div class="text-red">
+            <%= render "devise/shared/error_messages", resource: resource %>
+          </div>
+          <%= f.hidden_field :reset_password_token %>
+          <%= f.label :password, t("new_password") %>
+          <div class="input_field password-field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <%= f.password_field :password %>
+          </div><br />
+          <%= f.label :password, t("confirm_password") %>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <%= f.password_field :password_confirmation %>
+          </div>
+        </div>
+        <%= f.submit t("change_password") %>
+      <% end %>
+    </div>
+  </div>
+</div>
