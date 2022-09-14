@@ -74,6 +74,14 @@ en:
         size: "Size"
         price: "Price"
         quantity: "Quantity"
+        create: "Create" 
+    orders:
+      index:
+        name: "Name"
+        phone: "Phone"
+        address: "Address"
+        total: "Total"
+        status: "Status"
   shared:
     nav:
       category: "Category"
@@ -82,6 +90,7 @@ en:
       product: "Product"
       user: "User"
       list_user: "List user"
+      orders: "Orders"
     header:
       home: "Home"
       contact: "Contact"
@@ -134,3 +143,10 @@ en:
   empty: "Empty!"
   btn_ok: "Ok"
   btn_cancel: "Cancel"
+  orders:
+    status:
+      name: "Status"
+      approved: "Approved"
+      pending: "Pending"
+      processing: "Processing"
+      rejected: "Rejected"
