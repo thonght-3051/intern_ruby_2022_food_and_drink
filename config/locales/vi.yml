@@ -81,6 +81,24 @@ vi:
         address: "Địa chỉ"
         total: "Tổng tiền"
         status: "Trạng thái"
+      edit:
+        title: "Cập nhật đơn hàng"
+        btn_edit: "Cập nhật"
+        status: "Trạng thái"
+      update:
+        success: "Đơn hàng đã được cập nhật trạng thái"
+        fail: "Cập nhật thất bại"
+        mail:
+          subject: "Đơn hàng của bạn đã được %{status}"
+          info: "Thông tin đơn hàng"
+          size: "Kích cỡ"
+          money: "Số tiền"
+          quantity: "Số lượng"
+          delivery_info: "Thông tin người nhận"
+          address: "Địa chỉ:"
+          phone: "Số điện thoại:"
+          name: "Tên:"
+          feedback: "Nếu thông tin sai sót, xin vui lòng liên hệ với chúng tôi:"
   shared:
     nav:
       category: "Danh mục"
@@ -112,6 +130,7 @@ vi:
   login_fail: "Tài khoản hoặc mật khẩu không chính xác"
   text_register: "Chưa có tài khoản?"
   text_login: "Đã có tài khoản?"
+  logout: "Đăng xuất"
   pagy:
     nav:
       next: "Tiếp theo"

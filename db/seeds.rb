@@ -47,6 +47,13 @@ users.each { |user| user.addresses.create!(
   )
 end
 
+Size.create!([
+  {:name => 'S'},
+  {:name => 'M'},
+  {:name => 'L'},
+  {:name => 'Xl'},
+])
+
 20.times do |n|
   name = Faker::Commerce.product_name
   description = Faker::Lorem.sentence(word_count: 100)
@@ -59,7 +66,7 @@ end
 end
 
 Product.all.each { |pro| pro.product_attributes.create!(
-  price: Faker::Commerce.price,
+  price: 100,
   quantity: 100,
   size_id: Faker::Number.between(from: 1, to: 4)
   )
@@ -70,16 +77,27 @@ Product.all.each { |pro| pro.product_images.create!(
   )
 }
 
-Size.create!([
-  {:name => 'S'},
-  {:name => 'M'},
-  {:name => 'L'},
-  {:name => 'Xl'},
-])
-
 ProductAttribute.create!(
-  price: Faker::Commerce.price,
+  price: 100,
   quantity: 10,
   size_id: 3,
   product_id: 1
+)
+
+10.times do |n| 
+  Order.create!(
+  total: 100,
+  note: "absabdbd",
+  status: 0,
+  phone: 333333333333,
+  user_id: 1,
+  address_id: 1
+)
+end
+
+OrderDetail.create!(
+  price: 100,
+  quantity: 1,
+  product_attribute_id: rand(10),
+  order_id: rand(10)
 )
