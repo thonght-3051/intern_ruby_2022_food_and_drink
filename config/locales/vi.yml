@@ -31,7 +31,8 @@ vi:
         status: "Trạng thái"
       destroy:
         alert_success_delete: "Xóa thành công"
-        alert_err_delete: "Xóa danh mục không thành công"
+        alert_err_delete: "Danh mục có sản phẩm đã được đặt hàng, vui lòng kiểm tra lại trước khi xóa nó"
+        warning_delete: "nếu bạn xóa %{name}, tất cả sản phẩm trong nó sẽ bị xóa"
       form:
         name: "Name"
         status: "Trạng thái"
@@ -57,6 +58,11 @@ vi:
         create: "Tạo"
         category_not_exists: "Danh mục không tồn tại"
         validate_image: "Hình ảnh không đúng định dạng"
+        image: "Hình ảnh"
+        add_row: "Thêm hàng ô nhập thuộc tính sản phẩm"
+        add_image: "Thêm ô nhập hình ảnh sản phẩm"
+        remove_row: "Xóa hàng ô nhập thuộc tính sản phẩm"
+        remove_image: "Xóa hàng ô nhập hình ảnh sản phẩm"
       create:
         success: "Tạo mới thành công"
         fail: "Tạo mới thất bại"
@@ -69,7 +75,7 @@ vi:
       destroy:
         alert_success_destroy: "Xóa thành công"
         alert_err_destroy: "Xóa thất bại"
-        title_modal: "Bạn có muốn xóa #{name}"
+        title_modal: "Bạn có muốn xóa %{name}"
       show:
         size: "Kich cỡ"
         price: "Giá"
@@ -166,3 +172,10 @@ vi:
       pending: "Đang chờ xác nhận"
       processing: "Đang xử lý"
       rejected: "Đã từ chối"
+  validate:
+    required: "Không được để trống"
+    min_length: "Tối thiểu %{number} kí tự"
+    max_length: "Tối đa %{number} kí tự"
+    min: "Giá trị phải lớn hơn %{number}"
+    max: "Giá trị phải nhỏ hơn %{number}"
+    name_exists: "Tên đã tồn tại"

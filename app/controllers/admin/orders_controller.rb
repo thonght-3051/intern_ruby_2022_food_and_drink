@@ -8,17 +8,42 @@ class Admin::OrdersController < ApplicationController
   def edit; end
 
   def update
-    if @order.update status_params
-      OrderMailer.status(@order).deliver_now
-      flash[:success] = t ".success"
-      redirect_to admin_orders_path
+    case status_params[:status]
+    when "rejected", "approved"
+      approve_or_reject_order
+    when "processing"
+      processing_order
     else
-      flash[:danger] = t ".fail"
-      render :edit
+      throw StandardError
     end
   end
 
   private
+
+  def run_update
+    if @order.update status_params
+      OrderMailer.status(@order).deliver_now
+    else
+      throw StandardError
+    end
+  end
+
+  def approve_or_reject_order
+    if @order.status == "pending"
+      run_update
+    else
+      throw StandardError
+    end
+  end
+
+  def processing_order
+    if @order.status == "approved"
+      run_update
+    else
+      throw StandardError
+    end
+  end
+
   def status_params
     params.require(:order).permit(:status)
   end

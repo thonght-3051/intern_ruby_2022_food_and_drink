@@ -1,6 +1,7 @@
 class ProductAttribute < ApplicationRecord
   belongs_to :product
   belongs_to :size
+  has_many :order_details, dependent: :destroy
 
   delegate :name, to: :size, prefix: true
 

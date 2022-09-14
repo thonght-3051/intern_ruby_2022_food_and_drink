@@ -5,6 +5,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require toastr
+//= require jquery.validate
+//= require jquery.validate.additional-methods
+//= require popper
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -14,6 +17,7 @@ import 'bootstrap';
 require('admin-lte');
 require("bootstrap");
 require("jquery");
+require("jquery-validation")
 require("cocoon");
 // import "admin-lte/dist/css/AdminLTE.css";
 import "font-awesome/css/font-awesome.css";
@@ -23,6 +27,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 window.Swal = Swal;
 require("./product")
+require("./common");
 
 global.toastr = require("toastr")
 // document.addEventListener("turbolinks:load", () => {

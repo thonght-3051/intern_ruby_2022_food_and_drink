@@ -10,13 +10,14 @@
       <%= category.status_i18n %>
     </td>
     <td class="w-25">
-      <%= link_to edit_admin_category_path(category), class: "btn btn-default float-left" do %>
-        <i class=" fas fa-edit" aria-hidden="true"></i>
-      <% end %>
-      <%= button_to admin_category_path(category), remote: true, method: :delete,
-            class: "btn btn-danger float-right" do%>
-        <i class="fas fa-times" aria-hidden="true"></i>
-      <% end %>
+      <div class="d-flex">
+        <%= link_to edit_admin_category_path(category), class: "btn btn-edit-category text-warning btn-sm btn-rounded", remote: true do %>
+          <i class=" fas fa-edit" aria-hidden="true"></i>
+        <% end %>
+        <button type="button" data-name="<%= category.name %>" data-id="<%= category.id %>" class="btn-delete-category btn text-danger btn-sm btn-rounded">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
     </td>
   </tr>
 <% end %>

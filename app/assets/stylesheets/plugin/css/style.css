@@ -2797,7 +2797,7 @@ App section
   }
 
   .img-showcase img {
-    min-width: 100%;
+    max-width: 100%;
   }
 
   .img-select {
