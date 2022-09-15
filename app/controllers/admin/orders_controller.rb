@@ -23,7 +23,7 @@ class Admin::OrdersController < ApplicationController
   def run_update
     raise StandardError unless @order.update status_params
 
-    OrderMailer.status(@order).deliver_now
+    OrderMailer.status(@order).deliver_later
   end
 
   def approve_or_reject_order
