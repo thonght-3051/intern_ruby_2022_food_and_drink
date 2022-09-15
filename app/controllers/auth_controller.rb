@@ -23,6 +23,7 @@ class AuthController < ApplicationController
   def handle_login
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
+      log_in user
       decentralization_redirect_user user
     else
       flash.now[:danger] = t "login_fail"
