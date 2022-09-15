@@ -4,6 +4,8 @@ vi:
       base_title: "InternRuby2022FoodAndDrink"
     dashboard:
       base_title: "InternRuby2022FoodAndDrink"
+    devise:
+      base_title: "InternRuby2022FoodAndDrink"
   admin:
     home:
       index:
@@ -179,3 +181,16 @@ vi:
     min: "Giá trị phải lớn hơn %{number}"
     max: "Giá trị phải nhỏ hơn %{number}"
     name_exists: "Tên đã tồn tại"
+  forgot_password: "Quên mật khẩu?"
+  remember_me: "Lưu đăng nhập"
+  reset_password: "Đặt lại mật khẩu"
+  change_password: "Thay đổi mật khẩu"
+  new_password: "Mật khẩu mới"
+  confirm_password: "Xác nhận mật khẩu"
+  devise:
+    mailer:
+      reset_password_instructions:
+        text_reset: "Đã có một yêu cầu thay đổi mật khẩu của bạn!"
+        text_confirm: "Nếu không thực hiện yêu cầu này, chỉ cần bỏ qua email này. Nếu không, vui lòng nhấp vào nút bên dưới để thay đổi mật khẩu của bạn:"
+  or: "Hoặc"
+  login_google: "Tiếp tục với Google"

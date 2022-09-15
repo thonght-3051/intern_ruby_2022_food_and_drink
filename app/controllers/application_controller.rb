@@ -1,14 +1,23 @@
 class ApplicationController < ActionController::Base
-  include AuthHelper
   include Pagy::Backend
   protect_from_forgery with: :exception
 
-  before_action :set_locale, :is_admin?
+  before_action :set_locale
+  before_action :is_admin?, unless: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def is_admin?
-    return if logged_in? && current_user.admin?
+    return if user_signed_in? && current_user.admin?
 
     redirect_to root_url
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    added_attrs = [:name, :phone, :email, :password, :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
   private

@@ -1,0 +1,17 @@
+<%= provide :title, t("forgot_password") %>
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="row clearfix">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+          <%= f.text_field :email, placeholder: t("email") %>
+        </div>
+        <%= f.submit t("reset_password") %>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-between">
+      <%= link_to t("login"), new_user_session_path %>
+      <%= link_to t("btn_register"), new_user_registration_path %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<%= provide :title, t("login") %>
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2><%= t "login" %></h2>
+    </div>
+    <div class="row clearfix">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="text-red">
+          <%= flash[:alert] %>
+        </div>
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+          <%= f.text_field :email, placeholder: t("email") %>
+        </div>
+        <div class="input_field">
+          <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+          <%= f.password_field :password, placeholder: t("password") %>
+          <span class="show_pass"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+        </div>
+        <div class="d-flex items-center justify-content-between">
+          <% if devise_mapping.rememberable? %>
+            <div class="input_field checkbox_option">
+              <%= f.check_box :remember_me %>
+              <%= f.label t("remember_me"), class: "m-0", for: "user_remember_me" %>
+            </div>
+          <% end %>
+          <div>
+            <%= link_to t("forgot_password"), new_user_password_path %>
+          </div>
+        </div>
+        <%= f.submit t("login"), class: "btn-login" %>
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= t "or" %>
+    </div><br />
+    <div>
+      <%= button_to t("login_google"), user_google_oauth2_omniauth_authorize_path, data: { turbolinks: false }, class: "w-full" %>
+    </div>
+    <div class="d-flex justify-content-between">
+      <div>
+        <%= t "text_register" %>
+        <%= link_to t("btn_register"), new_user_registration_path %>
+      </div>
+    </div>
+  </div>
+</div>

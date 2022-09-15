@@ -1,6 +1,11 @@
+# Config mail
 host:
 mail_host:
 mail_user_name:
 mail_user_password:
 mail_address:
 mail_port:
+
+# Config google
+google_client_id:
+google_client_secret:
