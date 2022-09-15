@@ -193,6 +193,23 @@ $(document).ready(function () {
     })
   })
 
+  let $eventSelect = $(".select-category");
+  $eventSelect.select2({
+    maximumSelectionLength: 3,
+    width: "100%"
+  });
+  $eventSelect.on("select2:select", function (e) { log("select2:select", e); });
+
+  function log(name) {
+    var $e = $("<li>" + name + "</li>");
+    $e.animate({ opacity: 1 }, 10000, 'linear', function () {
+      $e.animate({ opacity: 0 }, 2000, 'linear', function () {
+        $e.remove();
+      });
+    });
+  }
+  $('b[role="presentation"]').hide();
+  $('.select2-selection__arrow').append('<i class="fa fa-angle-down"></i>');
 
   $(window).bind('load', function () {
     if (localStorage.getItem("flash") != null) {
