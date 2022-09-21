@@ -3,6 +3,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.7.0"
 
+gem "axlsx_rails"
 gem "bcrypt", "~> 3.1.11"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
@@ -37,6 +38,7 @@ gem "simplecov-rcov"
 gem "toastr_rails"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
+gem "whenever", require: false
 source "https://rails-assets.org" do
   gem "rails-assets-angular"
   gem "rails-assets-bootstrap"

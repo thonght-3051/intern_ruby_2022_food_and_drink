@@ -13,6 +13,8 @@ class Admin::OrdersController < ApplicationController
       approve_or_reject_order
     when "processing"
       processing_order
+    when "finished"
+      finished_order
     else
       raise StandardError
     end

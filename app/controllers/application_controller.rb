@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   def is_admin?
     return if user_signed_in? && current_user.admin?
 
+    flash[:danger] = t "must_login"
     redirect_to root_url
   end
 
