@@ -11,6 +11,10 @@ en:
       index:
         title: "Home admin"
         home_page: "Home page"
+        name: "Name"
+        phone: "Phone"
+        address: "Address"
+        ip: "Ip address"
     categories:
       update:
         alert_success_update: "Update successfully"
@@ -207,3 +211,4 @@ en:
   seach: "Seach"
   must_login: "You need to login"
   export_excel: "Export to excel to see details"
+  top_users: "Top 5 most engaged users"

@@ -11,6 +11,10 @@ vi:
       index:
         title: "Quản trị trang chủ"
         home_page: "Trang chủ"
+        name: "Tên người dùng"
+        phone: "SDT"
+        address: "Địa chỉ"
+        ip: "Địa chỉ ip"
     categories:
       update:
         alert_success_update: "Cập nhật thành công"
@@ -205,3 +209,4 @@ vi:
   seach: "Tìm kiếm"
   must_login: "Bạn cần đăng nhập"
   export_excel: "Xuất ra excel để xem chi tiết"
+  top_users: "5 người dùng tương tác hàng đầu"

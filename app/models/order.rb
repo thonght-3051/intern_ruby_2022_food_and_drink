@@ -5,6 +5,10 @@ class Order < ApplicationRecord
 
   enum status: {pending: 0, approved: 1, processing: 2, rejected: 3, finished: 4}
 
+  scope :by_start_date,
+        ->(start_date){where("created_at >= :start_date", start_date: start_date)}
+  scope :by_end_date,
+        ->(end_date){where("created_at <= :end_date", end_date: end_date)}
   delegate :name, to: :user, prefix: true
   delegate :email, to: :user, prefix: true
   delegate :name, to: :address, prefix: true
@@ -23,5 +27,13 @@ class Order < ApplicationRecord
 
   def status_i18n
     I18n.t("orders.status.#{status}")
+  end
+
+  ransacker :created_at, type: :date do
+    Arel.sql("date(created_at)")
+  end
+
+  def self.ransackable_scopes _auth_object = nil
+    %i(by_start_date by_end_date)
   end
 end
