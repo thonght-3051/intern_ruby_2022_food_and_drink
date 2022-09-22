@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
   let emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
   let phoneRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]/
   let passwordRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
@@ -41,15 +41,27 @@ $(document).ready(function () {
       }
     },
     messages: {
+      "user[name]": {
+        required: I18n.t("devise.validate.required"),
+        minlength: I18n.t("devise.validate.length.min", { number: 10 }),
+        maxlength: I18n.t("devise.validate.length.max", { number: 255 }),
+      },
       "user[email]": {
         required: I18n.t("devise.validate.required"),
         minlength: I18n.t("devise.validate.length.min", { number: 10 }),
         maxlength: I18n.t("devise.validate.length.max", { number: 255 }),
       },
+      "user[phone]": {
+        required: I18n.t("devise.validate.required"),
+      },
       "user[password]": {
         required: I18n.t("devise.validate.required"),
         minlength: I18n.t("devise.validate.length.min", { number: 6 }),
         maxlength: I18n.t("devise.validate.length.max", { number: 255 }),
+      },
+      "user[password_confirmation]": {
+        required: I18n.t("devise.validate.required"),
+        // equalTo: I18n.t("devise.validate.equal", { number: 6 }),
       },
     }
   })

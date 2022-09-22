@@ -18,6 +18,7 @@
     "jquery-validation": "^1.19.5",
     "popper.js": "^1.16.1",
     "sass-loader": "10.1.1",
+    "select2": "^4.1.0-rc.0",
     "sweetalert2": "^11.4.29",
     "toastr": "^2.1.4",
     "turbolinks": "^5.2.0",

@@ -55,6 +55,10 @@ en:
         quantity: "Quantity"
         category: "Category"
         new: "New"
+        date_create: "Date created"
+        start_date: "Start date"
+        end_date: "End date"
+        all: "All"
       new:
         title: "Create new product"
         create: "Create"
@@ -197,3 +201,5 @@ en:
         text_confirm: "If did not make this request, just ignore this email. Otherwise, please click the button below to change your password:"
   or: "Or"
   login_google: "continue with Google"
+  all: "All"
+  seach: "Seach"

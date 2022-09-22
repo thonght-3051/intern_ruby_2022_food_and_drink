@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
   has_many :addresses, dependent: :destroy
@@ -27,7 +27,7 @@ class User < ApplicationRecord
     format: {with: Settings.const.users.email.regex},
     uniqueness: true
 
-  # validates :phone, presence: true, uniqueness: true
+  validates :phone, uniqueness: true
 
   validates :password, presence: true,
     length: {minimum: Settings.const.users.password.length.min},

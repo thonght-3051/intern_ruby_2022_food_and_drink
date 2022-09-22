@@ -1,11 +1,41 @@
 <% if can? :create, Product %>
   <%= link_to t(".new"), new_admin_product_path, class: "btn btn-danger mb-3" %>
 <% end %>
+<%= search_form_for [:admin, @q] do |f| %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label t ".name" %>
+      <%= f.search_field :name_cont, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label t ".category" %>
+      <%= f.select :category_eq, Category.pluck(:name, :id), {selected: params[:q].nil? ? "" : params[:q][:category_eq], prompt: t(".all")}, class: "select-category d-none" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label t ".date_create" %>
+      <%= f.date_field :created_at_eq, class:"form-control" %>
+    </div>
+    <div class="form-group col-md-12">
+      <%= f.label t ".date_range" %>
+      <div class="form-group col-md-12">
+        <div class="form-group d-flex col-md-6 align-items-end">
+          <%= f.label t(".start_date"), class: "col-md-2" %>
+          <%= f.date_field :by_start_date, value: check_valid_date(params[:q], :by_start_date), class:"form-control" %>
+        </div>
+        <div class="form-group d-flex col-md-6 align-items-end">
+          <%= f.label t(".end_date"), class: "col-md-2" %>
+          <%= f.date_field :by_end_date, value: check_valid_date(params[:q], :by_end_date), class:"form-control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= f.submit t("seach"), class: "btn btn-primary" %>
+<% end %>
 <table class="table align-middle mb-0 bg-white table-product">
   <thead class="bg-light">
     <tr>
-      <th><%= t ".name" %></th>
-      <th><%= t ".category" %></th>
+      <th><%= sort_link(@q, :name, t(".name")) %></th>
+      <th><%= sort_link(@q, :category_name, t(".category")) %></th>
       <th><%= t ".quantity" %></th>
       <th></th>
     </tr>

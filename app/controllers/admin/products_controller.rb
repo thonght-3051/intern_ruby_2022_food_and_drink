@@ -3,7 +3,9 @@ class Admin::ProductsController < ApplicationController
   before_action :find_product, except: %i(index new create)
   authorize_resource
   def index
-    @pagy, @products = pagy Product.latest_product,
+    param_filter = params[:q].reject{|_, v| v == "-1"} if params[:q].present?
+    @q = Product.includes(:category, :product_attributes).ransack(param_filter, auth_object: set_ransack_auth_object)
+    @pagy, @products = pagy @q.result,
                             items: Settings.const.paginate
   end
 
@@ -50,5 +52,9 @@ class Admin::ProductsController < ApplicationController
 
   def find_product
     @product = find_object Product, params[:id]
+  end
+
+  def set_ransack_auth_object
+    current_user.admin? ? :admin : nil
   end
 end
