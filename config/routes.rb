@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     root to: "dashboard#index"
     devise_for :users, skip: :omniauth_callbacks
     resources :dashboard, only: %i(index show)
+    resources :rooms
+    resources :messages
     # Auth
     get "auth/register", to: "auth#new"
     get "auth/login"
